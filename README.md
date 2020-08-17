@@ -22,7 +22,10 @@ virtualenv mypython
 mypthon\Scripts\activate
 ```
 
-### step 4 - ```python manage.py runserver```
+### step 4 - Runserver
 
+```python manage.py runserver```
+
+- follow the link
 
 
