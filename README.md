@@ -8,7 +8,7 @@
 ```
 pip install django
 ```
-- if failed to install
+- IF failed to install
 
 ```
 pip install virtualenv
@@ -20,6 +20,10 @@ virtualenv mypython
 
 ```
 mypthon\Scripts\activate
+```
+
+```
+pip install django
 ```
 
 ### step 4 - Runserver
