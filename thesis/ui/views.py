@@ -1,9 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
 from .forms import ImageForm, Attributes, Classify
-from PIL import Image
-import requests
-from io import BytesIO
 
 def index(request):
     """Process images uploaded by users"""
