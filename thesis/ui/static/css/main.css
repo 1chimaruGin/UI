@@ -588,7 +588,14 @@ textarea.input100 {
   line-height: 1.2;
 }
 
-
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;    
+}
 
 
 
