@@ -27,19 +27,15 @@
 </head>
 <body>
 	<div class="container-contact100">
-		<div style="width: auto" class="wrap-contact100">
+		<div style="width: 70%" class="wrap-contact100">
 			<a href="/"><img height="42" width="42" src="{% static 'images/25694.png' %}" ></a>
             <form class="contact100-form validate-form" method="post">
 				{% csrf_token %}
 				<div class="wrap-input100 validate-input" data-validate = "Valid image file is required: jpg or png">
 					<span class="label-input100">The Attributes in CSV</span>
-					<table style="width:100%">
-						<tr>
 							{% for name in column %}
-								<th>{{ name }}</th>
+								<li>{{ name }}</li>
 						  	{% endfor %}
-						</tr>
-					  </table>
 					<span class="focus-input100"></span>
 				</div>
 				<div class="container-contact100-form-btn">
