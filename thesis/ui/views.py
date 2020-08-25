@@ -16,6 +16,10 @@ def index(request):
         browse = csvForm()
     return render(request, 'web/index.html', {'browse': browse})
 
+def select(request):
+    column = ['battery_power', 'int_memory', 'ram', 'four_g', 'sc_h', 'sc_w', 'talk_time']
+    return render(request, 'web/pearson.html', {'column': column})
+
 def classify(request):
     result = 10 # Example
     time = 3 # Example

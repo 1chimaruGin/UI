@@ -1,0 +1,64 @@
+{% load static %}
+<head>
+	<title>Upload Dataset</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--===============================================================================================-->
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="{% static 'images/icons/favicon.ico' %}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+<!--===============================================================================================-->
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/animsition/css/animsition.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" hrexf="{% static 'vendor/select2/select2.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/daterangepicker/daterangepicker.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+<!--===============================================================================================-->
+</head>
+<body>
+	<div class="container-contact100">
+		<div style="width: 70%;" class="wrap-contact100">
+			<a href="/"><img height="42" width="42" src="{% static 'images/25694.png' %}" ></a>
+            <form class="contact100-form validate-form" method="post">
+				{% csrf_token %}
+				<div class="wrap-input100 validate-input" data-validate = "Valid image file is required: jpg or png">
+					<span class="label-input100">The Selected Attributes</span>
+					<table style="width:100%">
+						<tr>
+							{% for name in column %}
+								<th>{{ name }}</th>
+						  	{% endfor %}
+						</tr>
+					  </table>
+					<span class="focus-input100"></span>
+				</div>
+				<div class="container-contact100-form-btn">
+					<div class="wrap-contact100-form-btn">
+						<div class="contact100-form-bgbtn"></div>
+						<a href="{% url 'classify' %}">
+							<button type = "button" id = "submit_btn" class="contact100-form-btn">
+								<span>
+									Classify
+									<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+								</span>
+							</button>
+						</a>
+					</div>
+                </div>
+            </form>
+
+		</div>
+	</div>
+<script src="{% static 'js/utility.js' %}"></script>
+</body>
+</html>
