@@ -20,13 +20,20 @@ def select(request):
     column = ['battery_power', 'int_memory', 'ram', 'four_g', 'sc_h', 'sc_w', 'talk_time']
     return render(request, 'web/pearson.html', {'column': column})
 
-def upload (request):
+def selected_and_upload(request):
     if request.method == 'POST':
-        form = SimpleForm(request.POST)
-        if form.is_valid():
-            result = 10 # Example
-            time = 3 # Example
-            return render(request, 'web/result.html', {'form': form, 'result': result, 'time': time})
+        browse = csvForm(request.POST, request.FILES)
+        if browse.is_valid():
+            obj = browse.save()
+            csv_data = pd.read_csv(obj.csv.path)
+            column = [name for name in csv_data.columns]
+            data = csv_data.head().values.tolist()
+            return render(request, 'web/upload.html', {'browse': browse, 'column': column, 'data': data})
     else:
-        form = SimpleForm()
-        return render(request, 'web/upload.html', {'form': form})
+        browse = csvForm()
+    return render(request, 'web/selected.html', {'browse': browse})
+
+def result(request):
+    result = 10 # Example
+    time = 3 # Example
+    return render(request, 'web/result.html', {'result': result, 'time': time})

@@ -27,16 +27,28 @@
 </head>
 <body>
 	<div class="container-contact100">
-		<div style="width: auto" class="wrap-contact100">
+		<div class="wrap-contact100">
 			<a href="/"><img height="42" width="42" src="{% static 'images/25694.png' %}" ></a>
-            <form class="contact100-form validate-form" method="post">
+            <form class="contact100-form validate-form" method="post" action="{% url 'result' %}">
 				{% csrf_token %}
 				<div class="wrap-input100 validate-input" data-validate = "Valid image file is required: jpg or png">
                     <span class="label-input100">The Attributes in CSV</span>
                     <br>
                     <br>
-							{{ form }}
-					<span class="focus-input100"></span>
+					<label for="1">battery_power:</label>
+					<input style='border: 2px solid grey;' type="text" id="1" name="1"><br><br>
+					<label for="2">int_memory:</label>
+					<input style='border: 2px solid grey;' type="text" id="2" name="2"><br><br>
+					<label for="3">ram:</label>
+					<input style='border: 2px solid grey;' type="text" id="3" name="3"><br><br>
+					<label for="4">four_g:</label>
+					<input style='border: 2px solid grey;' type="text" id="4" name="4"><br><br>
+					<label for="5">sc_h:</label>
+					<input style='border: 2px solid grey;' type="text" id="5" name="5"><br><br>
+					<label for="6">sc_w:</label>
+					<input style='border: 2px solid grey;' type="text" id="6" name="6"><br><br>
+					<label for="7">talk_time:</label>
+					<input style='border: 2px solid grey;' type="text" id="7" name="7"><br><br>
 				</div>
 				<div class="container-contact100-form-btn">
 					<div class="wrap-contact100-form-btn">

@@ -29,28 +29,29 @@
 	<div class="container-contact100">
 		<div class="wrap-contact100">
 			<a href="/"><img height="42" width="42" src="{% static 'images/25694.png' %}" ></a>
-            <form class="contact100-form validate-form" method="post">
+			<span class="contact100-form-title">Upload Dataset?</span>
+			<form class="contact100-form validate-form" method="post" enctype="multipart/form-data">
 				{% csrf_token %}
-				<div class="wrap-input100 validate-input" data-validate = "Valid image file is required: jpg or png">
-					<span class="label-input100">The Attributes in CSV</span>
-							{% for name in column %}
-								<li>{{ name }}</li>
-						  	{% endfor %}
+				<div class="wrap-input100 validate-input" data-validate = "Valid dataset file is required: csv">
+					<span class="label-input100">Select Only One Dataset File</span><br>
+					<span id="">{{ browse.csv }}</span>
+					<input id="" type="hidden" name="img" value="">
 					<span class="focus-input100"></span>
+				</div>
+				<div>
+					<img id='image-picked' class='no-display'>
 				</div>
 				<div class="container-contact100-form-btn">
 					<div class="wrap-contact100-form-btn">
 						<div class="contact100-form-bgbtn"></div>
-						<a href="{% url 'select' %}">
-							<button type = "button" id = "submit_btn" class="contact100-form-btn">
-								<span>
-									Select Feature
-									<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
-								</span>
-							</button>
-						</a>
+						<button type = "submit" id = "submit_btn" class="contact100-form-btn">
+							<span>
+								Upload Selected Dataset
+								<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+							</span>
+						</button>
 					</div>
-                </div>
+				</div>
             </form>
 
 		</div>

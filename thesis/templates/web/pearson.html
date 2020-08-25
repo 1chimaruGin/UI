@@ -27,7 +27,7 @@
 </head>
 <body>
 	<div class="container-contact100">
-		<div style="width: 70%;" class="wrap-contact100">
+		<div class="wrap-contact100">
 			<a href="/"><img height="42" width="42" src="{% static 'images/25694.png' %}" ></a>
             <form class="contact100-form validate-form" method="post">
 				{% csrf_token %}
@@ -42,7 +42,7 @@
 				<div class="container-contact100-form-btn">
 					<div class="wrap-contact100-form-btn">
 						<div class="contact100-form-bgbtn"></div>
-						<a href="{% url 'upload' %}">
+						<a href="{% url 'selectedupload' %}">
 							<button type = "button" id = "submit_btn" class="contact100-form-btn">
 								<span>
 									Store
